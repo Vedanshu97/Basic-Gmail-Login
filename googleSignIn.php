@@ -47,10 +47,10 @@ if($client->getAccessToken()){
 
   if(!empty($userData)) {
     $objDBController = new DBController();
-    $isExistingUser = $objDBController->isNewUser($userData->id);
+    $isNewUser = $objDBController->isNewUser($userData->id);
 
     //if New User,insert into Database
-    if($isExistingUser) {
+    if($isNewUser) {
       $objDBController->addUser($userData);
       ?><script>alert('New User ! Added to DB...');</script><?php
     }
